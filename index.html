@@ -23,8 +23,12 @@
 
   <script>
     // global variables
-    const API = 'https://acme-users-api-rev.herokuapp.com/api/products';
-    const response = async() => {
+    const responses = await promise.all([
+      fetch('https://acme-users-api-rev.herokuapp.com/api/products'),
+      fetch('https://acme-users-api-rev.herokuapp.com/api/companies'),
+      fetch('https://acme-users-api-rev.herokuapp.com/api/offerings')
+      ]);
+    const responses = async() => {
       const sampleData = await fetch(API);
       const data1 = await sampleData.json();
       console.log(data1);

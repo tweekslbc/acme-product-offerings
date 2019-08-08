@@ -22,9 +22,7 @@
     <div id='products'></div>
 
   <script>
-    // global variables
 
-    let globalProduct = [];
     const loadData = async() => {
       const responses = await Promise.all([
       fetch('https://acme-users-api-rev.herokuapp.com/api/products'),
@@ -40,13 +38,48 @@
             console.log(productData);
             console.log(companiesData);
             console.log(offeringsData);
-            globalProduct = productData;
+
+            //Pull out Product name
+            //Get Description
+            //Get Suggested Price
+
+            //Loop Offerings that match Product ID
+                // Price
+                // Company ID
+                    // Find function in company data, return first match for the company ID
+                    // array.find('Number')
+
+            /*
+            {
+              productName: ,
+              productID: ,
+              productDescription: ,
+              suggestedPrice: ,
+              offerings: [
+                  {
+                    price: ,
+                    productID: ,
+                    companyID: ,
+                    companyName: findCompany(companyID)
+                  },
+                  {
+                    price: ,
+                    productID: ,
+                    companyID: ,
+                    companyName: findCompany(companyID)
+                  },
+              ]
+            }
+            */
+
+
+
     }
     // product linked to offerings by ID
     // Offerings linked to companies? by Company ID
     loadData();
 
-    console.log(globalProduct);
+
 
 
     let id = ''; // id of product - how will our app change this?

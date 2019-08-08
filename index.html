@@ -1,0 +1,39 @@
+<!-- a starting point -->
+<html>
+    <head>
+        <style>
+            #products {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .product-card {
+                color: white;
+                width: 33.33%;
+                background-color: tomato;
+                border: 5px solid #fff;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+  <body>
+
+    <!-- we will render HTML inside #products -->
+    <div id='products'></div>
+
+  <script>
+    // global variables
+    const API = 'https://acme-users-api-rev.herokuapp.com/api'; // to use as a base for any API calls
+    let id = ''; // id of product - how will our app change this?
+    let data = []; // list of products - where will this data come from?
+
+    // define event listeners (i.e. 'hashchange')
+
+    // other functions?
+
+    // do we need to execute any functions when the page loads (not just inside other functions)?
+    // i.e. render();
+    // something else?
+
+  </script>
+  </body>
+</html>

@@ -23,6 +23,8 @@
 
   <script>
 
+    const masterList = [];
+
     const loadData = async() => {
       const responses = await Promise.all([
       fetch('https://acme-users-api-rev.herokuapp.com/api/products'),
@@ -50,6 +52,7 @@
                     // array.find('Number')
 
             /*
+            []
             {
               productName: ,
               productID: ,
@@ -72,12 +75,28 @@
             }
             */
 
+      for(let i in productData){
+        const product = {}
+        product['name'] = productData[i].name;
+        product['productID'] = productData[i].id;
+        product['productDescription'] = productData[i].description;
+        product['suggestedPrice'] = productData[i].suggestedPrice;
 
+        product['offerings'] = (productData[i].id)=>{
+
+        }
+
+        masterList.push(product)
+
+      }
+
+      console.log(masterList);
 
     }
     // product linked to offerings by ID
     // Offerings linked to companies? by Company ID
     loadData();
+
 
 
 

@@ -32,9 +32,9 @@
 
         //return response.data;
 
-            console.log(await responses[0].json());
-            console.log(await responses[1].json());
-            console.log(await responses[2].json());
+            const productData = await responses[0].json();
+            const companiesData = await responses[1].json();
+            const offeringsData = await responses[2].json();
     }
     loadData();
     let id = ''; // id of product - how will our app change this?

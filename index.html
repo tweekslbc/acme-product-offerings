@@ -23,17 +23,20 @@
 
   <script>
     // global variables
-    const responses = await promise.all([
+    const loadData = async() => {
+      const responses = await Promise.all([
       fetch('https://acme-users-api-rev.herokuapp.com/api/products'),
       fetch('https://acme-users-api-rev.herokuapp.com/api/companies'),
       fetch('https://acme-users-api-rev.herokuapp.com/api/offerings')
       ]);
-    const responses = async() => {
-      const sampleData = await fetch(API);
-      const data1 = await sampleData.json();
-      console.log(data1);
+
+        //return response.data;
+
+            console.log(await responses[0].json());
+            console.log(await responses[1].json());
+            console.log(await responses[2].json());
     }
-    response();
+    loadData();
     let id = ''; // id of product - how will our app change this?
     let data = []; // list of products - where will this data come from?
 

@@ -23,6 +23,8 @@
 
   <script>
     // global variables
+
+    let globalProduct = [];
     const loadData = async() => {
       const responses = await Promise.all([
       fetch('https://acme-users-api-rev.herokuapp.com/api/products'),
@@ -35,8 +37,18 @@
             const productData = await responses[0].json();
             const companiesData = await responses[1].json();
             const offeringsData = await responses[2].json();
+            console.log(productData);
+            console.log(companiesData);
+            console.log(offeringsData);
+            globalProduct = productData;
     }
+    // product linked to offerings by ID
+    // Offerings linked to companies? by Company ID
     loadData();
+
+    console.log(globalProduct);
+
+
     let id = ''; // id of product - how will our app change this?
     let data = []; // list of products - where will this data come from?
 

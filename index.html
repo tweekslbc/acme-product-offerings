@@ -16,14 +16,20 @@
         </style>
     </head>
   <body>
-    <h1>Acme Product Offerings</h1>;
+    <h1>Acme Product Offerings</h1>
 
     <!-- we will render HTML inside #products -->
     <div id='products'></div>
 
   <script>
     // global variables
-    const API = 'https://acme-users-api-rev.herokuapp.com/api'; // to use as a base for any API calls
+    const API = 'https://acme-users-api-rev.herokuapp.com/api/products';
+    const response = async() => {
+      const sampleData = await fetch(API);
+      const data1 = await sampleData.json();
+      console.log(data1);
+    }
+    response();
     let id = ''; // id of product - how will our app change this?
     let data = []; // list of products - where will this data come from?
 
